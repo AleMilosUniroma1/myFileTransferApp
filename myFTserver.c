@@ -14,7 +14,7 @@
 #include <sys/sendfile.h>
 #include <unistd.h>
 
-#include "server.h"
+#include "myFTserver.h"
 
 int aflag, pflag, dflag;
 char *ft_root_dir_pathname = NULL;

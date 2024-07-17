@@ -7,7 +7,7 @@
 #include <sys/sendfile.h>
 #include <unistd.h>
 
-#include "client.h"
+#include "myFTclient.h"
 
 /* Flags */
 int aflag, pflag, dflag;

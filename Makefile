@@ -5,25 +5,25 @@ CFLAGS += -ggdb
 
 all: run
 
-run: server 
-	 ./server ${SERVER_ARGS}
+run: myFTserver 
+	 ./myFTserver ${SERVER_ARGS}
 
-server: server.o utils.o
+myFTserver: myFTserver.o utils.o
+	$(CC) -pthread $(LDFLAGS) -o $@ $^
+
+myFTclient: myFTclient.o utils.o
 	$(CC) $(LDFLAGS) -o $@ $^
 
-client: client.o utils.o
-	$(CC) $(LDFLAGS) -o $@ $^
-
-server.o: server.c
+myFTserver.o: myFTserver.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-client.o: client.c
+myFTclient.o: myFTclient.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 utils.o: utils.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f *.o server client
+	rm -f *.o myFTclient myFTserver 
 
 .PHONY: all run clean

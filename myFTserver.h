@@ -1,6 +1,7 @@
 #ifndef SERVER_H
 #define SERVER_H
 
+#include <pthread.h>
 #include "utils.h"
 
 // "Max length to which the queue of pending connections for sockfd may grow".
